@@ -42,3 +42,4 @@ if again == "y" or again == "Y":
 
 else:
     print("Goodbye!")
+#NEED TO FIND AVERAGE AND PRINT, CREATE DO WHILE LOOP
