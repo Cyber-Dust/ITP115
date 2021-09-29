@@ -3,17 +3,17 @@ A comprehensive and foundational beginning into worlds unexplored.
 
 
 **Python**
-#### I. 
+#### I. Output & Variables
 * [Assignment 1](lab4_volk_dasean.py)
-#### II. 
+#### II. Operators & Output
 * []()
-#### III. 
+#### III. Branching
 * []()
-#### IV. 
+#### IV. While Loops
 * []()
-#### V. 
+#### V. For Loops
 * []()
-#### VI.
+#### VI. Strings & Lists part 1
 * []()
-#### VII. 
+#### VII. Strings & Lists part 2
 * []()
