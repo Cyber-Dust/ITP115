@@ -5,6 +5,8 @@ A comprehensive and foundational beginning into worlds unexplored.
 **Python**
 #### I. Output & Variables
 * [Assignment 1](lab4_volk_dasean.py)
+*  [Lab 1]()
+*  [Breakdown]()
 #### II. Operators & Output
 * []()
 #### III. Branching
