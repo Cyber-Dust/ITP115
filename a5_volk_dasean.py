@@ -4,54 +4,58 @@
 # Assignment 5
 
 
-#-----------------------------WELCOME TO THE SENTENCE GENERATOR---------------------------------#
-# In this assignment, we will be building a random sentence generator using the alphabet. After
+#-----------------------------WELCOME TO THE ALPHABET ITERATOR---------------------------------#
+# In this assignment, we will be building a random sentence iterator using the alphabet. After
 # the sentence is entered, the program outputs the number of special characters used and prints
-# out an alphabetical list displaying each letter in a row. NONE is used if there is no asterisks
-# present.
+# out an alphabetical list displaying each letter used in a row. NONE represents no letter or
+# special characters present. * is the indication of how many time a letter or special character
+# is present.
+
 # This program uses:
 # range-based for loop.
 # inputs
 # loop using a string variable
 # STEPS
 
+# a range based loop that takes in how many times it wants to run the characters input
+print("Character Distribution")
+userruns = int(input("Enter the number of times to run: "))
 
-
-import random
-
+for num in range(userruns):
 # create variable that contains all letters of the alphabet
-# letter = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
-
+# this is a string not an integer, so we use ""
+    abc = "abcdefghijklmnopqrstuvwxyz"
+# variable used later to increment the number of characters not in the alphabet, set to 0
+    special = 0
 # get input from user
-user = input("Enter a sentence: ")
+# the .lower() at the end of the input allows us to not include the method in our if statements!
+    user = input("\nEnter a sentence: ").lower()
 
-# count the # of special characters that are not in the alphabet and not spaces\
-# for special in user:
-#     if "a" or "A" in special:
-#         print("a: ")
-#     elif "b" or "B" in special:
-#         print("b ")
 
-# create a variable and use a for loop to loop through user input !USE BRANCHING!
-counter = 0
-for i in user:
-    letter = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
-    if i.lower() not in letter:
-        counter += 1
-    elif user == "B" or "b":
-        counter += 1
-    elif user == "C" or "c":
-        counter += 1
-    elif user == "D" or "d":
-        counter += 1
-    elif user == "E" or "e":
-        counter += 1
-    elif user == "F" or "f":
-        counter += 1
+    # count the # of special characters that are not in the alphabet and not spaces
+    for letter in user:
+        if letter not in abc and letter != ' ':
+            # increments the number of characters not in the alphabet
+            special = special + 1
+    if special is 0:
+        print("Special Characters: NONE")
+    else:
+        # multiply the number of special characters variable using asterisks
+        print("Special Characters: " + "*" * special)
 
-# Print out the number of special characters using asterisks
-print("Special Character: " + (counter * "*"))
-# Use multiplication operator with a string and number to repeat the string
+    # this will print out a range of a-z vertically
+    for letter in abc:
+        # variable for number of times a letter occurs set at 0
+        abcVariable = 0
+        for character in user:
+            if letter == character:
+                # increment the number of times a letter is used
+                abcVariable = abcVariable + 1
+        if abcVariable is 0:
+            print(letter + ": NONE")
+        else:
+            # multiply the number of letter uses times the updated abcVariable
+            print(letter + ": " + "*" * abcVariable)
 
-# if no special characters print out none
+
 
