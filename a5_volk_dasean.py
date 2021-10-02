@@ -48,6 +48,7 @@ for num in range(userruns):
         # variable for number of times a letter occurs set at 0
         abcVariable = 0
         for character in user:
+            # if the letter variable is in the abc variable
             if letter == character:
                 # increment the number of times a letter is used
                 abcVariable = abcVariable + 1
