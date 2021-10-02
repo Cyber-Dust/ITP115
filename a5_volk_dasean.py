@@ -8,7 +8,7 @@
 # In this assignment, we will be building a random sentence iterator using the alphabet. After
 # the sentence is entered, the program outputs the number of special characters used and prints
 # out an alphabetical list displaying each letter used in a row. NONE represents no letter or
-# special characters present. * is the indication of how many time a letter or special character
+# special characters present. * is the indication of how many times a letter or special character
 # is present.
 
 # This program uses:
