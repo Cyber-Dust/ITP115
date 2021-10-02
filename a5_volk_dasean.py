@@ -43,7 +43,7 @@ for num in range(userruns):
         # multiply the number of special characters variable using asterisks
         print("Special Characters: " + "*" * special)
 
-    # this will print out a range of a-z vertically
+    # this for-loop will print out a range of a-z vertically
     for letter in abc:
         # variable for number of times a letter occurs set at 0
         abcVariable = 0
