@@ -33,4 +33,16 @@ returns first postion where value occurs
 * list.pop(index)
 removes element in the index
 
-.pop is an index, .remove is a value
+Note: .pop is an index, .remove is a value
+
+* Strings are immutable
+* Lists are mutable
+
+list() fucntion converts a string to a list
+
+`word = "stir"
+ word_list = list(stir)
+ print(word_list)`
+
+str() function converts a list to a string
+
