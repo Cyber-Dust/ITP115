@@ -1,19 +1,19 @@
-# Dasean Volk, dvolk@usc.edu
-# ITP 115, Fall 2021
-# Week 7 Notes
+Dasean Volk, dvolk@usc.edu
+ITP 115, Fall 2021
+Week 7 Notes
 
 
 
-LIST COMMANDS
-# list.append(value)
-# list.clear()
-# list.insert(index, value)
-# list.remove(value)
+## LIST COMMANDS
+#### list.append(value)
+#### list.clear()
+#### list.insert(index, value)
+#### list.remove(value)
 
-# list.reverse()
+#### list.reverse()
 * reverses order..
 
-# list.sort() #sorts in alphanumeric order
+#### list.sort() #sorts in alphanumeric order
 Order of rearangemnt 
 * Numbers
 * Alphabetical: Upper Case
