@@ -1,5 +1,7 @@
 Dasean Volk, dvolk@usc.edu
+
 ITP 115, Fall 2021
+
 Week 7 Notes
 
 
@@ -30,3 +32,5 @@ returns # of occurences
 returns first postion where value occurs
 * list.pop(index)
 removes element in the index
+
+.pop is an index, .remove is a value
