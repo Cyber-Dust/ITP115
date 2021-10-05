@@ -12,6 +12,14 @@ Week 7 Notes
 #### list.insert(index, value)
 #### list.remove(value)
 
+
+#### list.append(value)
+#### list.clear()
+#### list.insert(index, value)
+#### list.remove(value)
+#### list.reverse()
+#### list.sort()
+
 #### list.reverse()
 * reverses order..
 
@@ -38,11 +46,33 @@ Note: .pop is an index, .remove is a value
 * Strings are immutable
 * Lists are mutable
 
-list() fucntion converts a string to a list
+#### list() fucntion converts a string to a list
 
 `word = "stir"
+
  word_list = list(stir)
+ 
  print(word_list)`
 
-str() function converts a list to a string
+#### str() function converts a list to a string
+
+#### string.join() method converts a list of strings into one string
+* no [] and ,
+* fills in the space between the strings
+
+`letter_list = ['h', 'e', 'l', 'l', 'o']
+ 
+ word = " ".join(letter_list)
+ 
+ print(word)`
+ 
+ #### string.split() method
+ * convert a string to a list by splitting it up based on a seperator
+
+#### string.strip()
+* Returns a string with whitespace 
+ 
+
+
+
 
