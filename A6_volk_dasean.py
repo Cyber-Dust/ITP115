@@ -46,3 +46,5 @@ while user != random_word:
         else:
             print("The jumbled word is", jumbled_word)
     count += 1 # count the number of guesses
+# if correct, print the number of guesses
+print("Congratulations!! You got it! \n It took you", count, "attempts")
