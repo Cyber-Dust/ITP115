@@ -39,12 +39,37 @@ def health_tip():
     print("Brush your teeth")
   else:
     print("Get exercise")
+    
+    
+# funciton w/ one parameter
+# function: even_or_odd
+# parameter: num is an integer
+# print a message saying wheter the number is even or odd
+def even_or_odd(num):
+  if num % 2 == 0:
+    print(num, "is an even number")
+  else:
+    print(num, "is an odd number")
   
-# calling functions
-print("Birthday")
-birthday()
-print("\nHealth Tips")
-want_tip = "y"
-while want_tip.lower() == "y":
-  health_tip()
-  want_tip = input("Do you want another tip (y or n)? ")
+#--------------------------------------CALLING FUNCTIONS-----------------------------------------#
+# define main
+# is the starting point for the whole program
+def main():
+  
+  # calling functions
+  print("Birthday")
+  birthday()
+
+  print("\nHealth Tips")
+  want_tip = "y"
+  while want_tip.lower() == "y":
+    health_tip()
+    want_tip = input("Do you want another tip (y or n)? ")
+
+  print("\nEven or Odd")
+  even_or_odd(12)
+  een_or_odd(-43)
+
+# calling main()
+main()
+
