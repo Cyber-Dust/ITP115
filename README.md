@@ -23,3 +23,4 @@ A comprehensive and foundational beginning into worlds unexplored.
 #### VIII. Test
 #### IX. Functions 
 * [Function Notes](week9.py)
+* [Shape Printer Lab](lab7.py)
