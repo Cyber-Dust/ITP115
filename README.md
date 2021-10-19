@@ -19,3 +19,6 @@ A comprehensive and foundational beginning into worlds unexplored.
 * []()
 #### VII. Strings & Lists part 2
 * []()
+#### VIII. Test
+#### IX. Functions 
+* [Function Notes](week9.py)
