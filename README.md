@@ -30,6 +30,7 @@ A comprehensive and foundational beginning into worlds unexplored.
 #### VII. Strings & Lists part 2
 * [Lists Notes](week7.md)
 #### VIII. Test
+* [Test](test.py)
 #### IX. Functions 
 * [Function Notes](week9.py)
 * [Shape Printer Lab](lab7.py)
