@@ -23,7 +23,15 @@
 SCHOOL = "USC"
 COURSE_NUM = 115
 
-# define functions
+#---------------------------DEFINE FUNCITONS----------------------------#
+
+# function: 
+# parameter 1: str
+# parameter 2: int
+# return value: 
+# side effect: 
+
+#-----------------------------------------------------------------------#
 
 # function: vote
 # parameter 1: name is a string(str)
@@ -40,9 +48,39 @@ def vote(name, age=18):
   # return keyword exits a function and instructs Python to continue executing the main program
   return msg
 
+# function: sortList
+# parameter: itemList is a list of strings
+# return value: None
+#side effect: sorts the list
+def sortList(itemList):
+  #list.sort()
+  # lists are mutable
+  itemList.sort()
+  
+# function: addItem
+# parameter 1: elementList is a list
+# parameter 2: newItem
+# return value: None
+# side effect: adding newItem to elementList
+def addItem(elementList, newItem):
+  elementList.append(newItem)
+  
+  
+  
 # main is the starting point of the program
 def main():
-  # test
+  print("List Example")
+  # create a list
+  food = ["chicken parm", "pizza", "rolled tacos"]
+  print(food)
+  print("call sortList")
+  sortList(food)
+  print(food)
+  print("call addItem")
+  addItem(food, "burger")
+  
+  # vote test
+  print("\Calling vote function")
   results = vote("Dasean", 25)
   print(results)
   
