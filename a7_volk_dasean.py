@@ -12,10 +12,8 @@ import random
 # o Return value (output): None
 # o Displays the game rules to the user:
 
-displayMenu():
-  print("Let's play Rock Paper Scissors."
-        "The rules of the game are:"
-        "Rock smashes Scissors"
-        "Scissors cut Paper"
-        "Paper covers Rock"
-        "If both the choices are the same, it's a tie")
+def displayMenu():
+      print("Let's play Rock Paper Scissors.\nThe rules of the game are:\n  Rock smashes Scissors\n  Scissors cut Paper"
+            "\n  Paper covers Rock\n  If both the choices are the same, it's a tie")
+displayMenu()
+
