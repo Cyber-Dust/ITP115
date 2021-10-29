@@ -38,8 +38,6 @@ def getPlayerChoice():
         player_choice = int(input("> "))
     return player_choice
 
-
-
 # Define the playRound(computerChoice, playerChoice) function.
 # o Parameter 1: an integer representing the computer’s choice
 # o Parameter 2: an integer representing the player’s choice
@@ -71,10 +69,6 @@ def playRound(player, computer):
     elif player == computer:
         print("Its a tie!")
         return 0
-
-
-
-
 
 # Define the continueGame() function.
 # o Parameters: None
@@ -110,12 +104,6 @@ def main():
     print("The computer won", cpuWins, "game(s)")
     print("You tied with the computer", tie, "times(s).")
 
-
-
-
 # ------------------------------------------------CALL FUNCTIONS----------------------------------------------------- #
 
 main()
-
-
-
