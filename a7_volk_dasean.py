@@ -23,8 +23,8 @@ def displayMenu():
 # o Use the random module to get a random integer between 0 and 2.
 
 def getComputerChoice():
-    random_num = random.randrange(0, 2)
-    return random_num
+    computer_choice = random.randrange(0, 2)
+    return computer_choice
 
 # Define the getPlayerChoice() function.
 # o Parameters (input): None
@@ -32,10 +32,13 @@ def getComputerChoice():
 # o Display the following message to the user:
 
 def getPlayerChoice():
-    print("Enter 0 for Rock, 1 for Paper, or 2 for Scissors")
-    for i in range(0, 3):
-      user = int(input("> "))
-      # if user > 3 or < 0: # Make sure that user 0,1, or 2.
+    print("\nEnter 0 for Rock, 1 for Paper, or 2 for Scissors")
+    player_choice = int(input("> "))
+    while player_choice > 2 or player_choice < 0:
+        player_choice = int(input("> "))
+    return player_choice
+
+
 
 # Define the playRound(computerChoice, playerChoice) function.
 # o Parameter 1: an integer representing the computer’s choice
@@ -44,8 +47,34 @@ def getPlayerChoice():
 # • Return -1 if the computer won the round
 # • Return 1 if the player won the round
 # • Return 0 if there is a tie
+# player = getPlayerChoice()
+# computer = getComputerChoice()
+def playRound(player, computer):
+    if player == 0 and computer == 2:
+        print("You Win!")
+        return 1
+    elif player == 2 and computer == 0:
+        print("Computer Wins!")
+        return -1
+    elif player == 2 and computer == 1:
+        print("You Win!")
+        return 1
+    elif player == 1 and computer == 2:
+        print("Computer Wins!")
+        return -1
+    elif player == 0 and computer == 1:
+        print("Computer Wins!")
+        return -1
+    elif player == 1 and computer == 0:
+        print("You Win!")
+        return 1
+    elif player == computer:
+        print("Its a tie!")
+        return 0
 
-# def playRound():
+
+
+
 
 # Define the continueGame() function.
 # o Parameters: None
@@ -53,21 +82,40 @@ def getPlayerChoice():
 # o Ask the user if they want to continue. Allow them to enter upper or lower case
 # letters.
 
-# def continueGame():
-#       playAgain = input("Do you want to continue playing (y or n)?")
-#       if playAgain == "y".lower():
+def continueGame():
+      playAgain = input("Do you want to continue playing (y or n)?")
+      if playAgain.lower() == "y":
+          return True
+      elif playAgain.lower() == "n":
+          return False
 
+def main():
+    displayMenu()
+    playerWins = 0
+    cpuWins = 0
+    tie = 0
+    newGame = True
+    while newGame:
+        player = getPlayerChoice()
+        cpu = getComputerChoice()
+        game = playRound(player, cpu)
+        if game == 1:
+            playerWins += 1
+        elif game == -1:
+            cpuWins += 1
+        elif game == 0:
+            tie += 1
+        newGame = continueGame()
+    print("\nYou won", playerWins, "game(s)")
+    print("The computer won", cpuWins, "game(s)")
+    print("You tied with the computer", tie, "times(s).")
 
 
 
 
 # ------------------------------------------------CALL FUNCTIONS----------------------------------------------------- #
 
-displayMenu()
-getComputerChoice()
-getPlayerChoice()
-# call the rest of the functions
-
+main()
 
 
 
