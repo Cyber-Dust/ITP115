@@ -14,21 +14,33 @@ A comprehensive and foundational beginning into worlds unexplored.
 
 **Python**
 #### I. Output & Variables
+* [Notes]()
 * [Assignment 1](lab4_volk_dasean.py)
-*  [Lab 1]()
-*  [Breakdown]()
+* [Lab 1]()
 #### II. Operators & Output
-* []()
+* [Notes]()
+* [Assignment 2]()
+* [Lab 2]()
 #### III. Branching
-* []()
+* [Notes]()
+* [Assignment 3]()
+* [Lab 1]()
 #### IV. While Loops
-* []()
+* [Notes]()
+* [Assignment 3]()
+* [Lab 1]()
 #### V. For Loops
-* []()
+* [Notes]()
+* [Assignment 4]()
+* [Lab 4]()
 #### VI. Strings & Lists part 1
-* []()
+* [Notes]()
+* [Assignment 5]()
+* [Lab 5]()
 #### VII. Strings & Lists part 2
 * [Lists Notes](week7.md)
+* [Assignment 6](lab4_volk_dasean.py)
+* [Lab 6]()
 #### VIII. Test
 * [Test](test.py)
 #### IX. Functions 
