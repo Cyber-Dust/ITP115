@@ -26,7 +26,7 @@ def expirement():
   heads = 0
   while heads < 3: # or !=
     coin_flip = coin()
-    flip += 1
+    flips += 1
     # branching
     if coin_flip == "heads":
       heads += 1
