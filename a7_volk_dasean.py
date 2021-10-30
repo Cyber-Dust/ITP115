@@ -108,8 +108,8 @@ def main():
         elif game == 0:
             tie += 1
         new_game = continue_game()
-    print("\nYou won", player_wins, "game(s)")
-    print("The computer won", cpu_wins, "game(s)")
+    print("\nYou won", player_wins, "game(s).")
+    print("The computer won", cpu_wins, "game(s).")
     print("You tied with the computer", tie, "times(s).")
     print("\nThank you for playing. Rock on!")
 
