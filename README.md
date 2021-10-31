@@ -45,3 +45,9 @@ A comprehensive and foundational beginning into worlds unexplored.
 #### IX. Functions 
 * [Function Notes](week9.py)
 * [Shape Printer Lab](lab7.py)
+#### X. Functions part 2
+* [Notes]()
+* [Lab]()
+* [Assignment]()
+#### XI. 
+[Assignment 8](a8_volk_dasean.py)
