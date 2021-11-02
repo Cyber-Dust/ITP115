@@ -37,14 +37,23 @@ file_obj.close()
 Take any data and saves it into CSV (Comma Seperated Values)
 `
 def main():
+
 fin = open("names.txt", "r")
+
 for line in fin:
+
 line = line.strip()
+
 name = line.split(" ")
+
 first_name = name[0]
+
 last_name = name[1]
+
 print(last_name + ", " + first_name)
+
 fin.close()
+
 main()
 `
 
