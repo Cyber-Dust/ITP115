@@ -6,6 +6,7 @@ Week 11 Notes
 # Files
 
 :star: YOU CAN DO ALL OF THIS WITH PANDAS :star:
+
 :star: For example: pd.read_csv('.csv') or pd.read_json('.json') :star:
 
 * A file is a collection of information
