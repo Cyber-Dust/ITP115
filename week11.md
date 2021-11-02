@@ -1,6 +1,9 @@
 Dasean Volk, dvolk@usc.edu
+
 Fall 2021, ITP 115
+
 Section: Boba
+
 Week 11 Notes
 
 # Files
@@ -48,8 +51,14 @@ list = string.split(",")
 
 
 
-#### **READ** A FILE
+#### **READ** HEADLINE
 
+* Many CSV files have a header row to label each column
+* To read the first line, can use the readline() method
+
+`
+string = file_obj.readline()
+`
 
 #### **WRITE** A FILE
 
