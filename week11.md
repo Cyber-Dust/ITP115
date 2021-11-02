@@ -5,6 +5,9 @@ Week 11 Notes
 
 # Files
 
+:star: YOU CAN DO ALL OF THIS WITH PANDAS :star:
+:star: For example: pd.read_csv('.csv') or pd.read_json('.json') :star:
+
 * A file is a collection of information
 * Stored as text (.py, .html, .css) or binary ([Word Doc] .docx, [Images] .jpg, .png, [Music] .mp3)
 
@@ -33,29 +36,16 @@ Function returns: file_obj
 `
 file_obj.close()
 `
+#### PROCESS CSV FILES
 
 Take any data and saves it into CSV (Comma Seperated Values)
+
 `
-def main():
-
-fin = open("names.txt", "r")
-
-for line in fin:
-
-line = line.strip()
-
-name = line.split(" ")
-
-first_name = name[0]
-
-last_name = name[1]
-
-print(last_name + ", " + first_name)
-
-fin.close()
-
-main()
+list = string.split(",")
 `
+
+
+
 
 #### **READ** A FILE
 
