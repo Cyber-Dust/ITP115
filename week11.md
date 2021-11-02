@@ -13,7 +13,11 @@ Week 11 Notes
 
 `
 file_obj = open(filename, mode)
+fileIn = open("words.txt", "r")
 `
+* "r" = read or file access mode
+* "words" = file name
+* ".txt" = file type
 
  2 parameters to the function:
 * **File Name** is a string variable for the name of the file
@@ -21,4 +25,17 @@ file_obj = open(filename, mode)
 
 Function returns: file_obj
 * a **file object variable** (new variable type)
+
+#### **CLOSE** A FILE
+* Use close()
+
+`
+file_obj.close()
+`
+
+
+#### **READ** A FILE
+
+
+#### **WRITE** A FILE
 
