@@ -29,7 +29,7 @@ fileIn = open("words.txt", "r")
 
  2 parameters to the function:
 * **File Name** is a string variable for the name of the file
-* **Mode** is a string variable for the file access mode
+* **Mode** is a string variable for the file access mode "r"
 
 Function returns: file_obj
 * a **file object variable** (new variable type)
@@ -61,4 +61,27 @@ string = file_obj.readline()
 `
 
 #### **WRITE** A FILE
+
+2 parameters to the function:
+* **File Name** is a string variable for the name of the file
+* **Mode** is a string variable for the file access mode "w"
+
+`
+print(object(s), sep=separator, end=end, file=file_obj)
+
+file_obj.close()
+`
+"r" 
+* Read from a file.
+* If the file doesn't exist, Python will generate an error.
+"w"
+* Write to a file.
+* If the file exists, its contents are overwritten/replaced.
+* If the file doesn't exist, it's created.
+"a"
+* Append a file.
+* If the file exists, new data is appended to it.
+* If the file doesn't exist, it's created.
+
+
 
