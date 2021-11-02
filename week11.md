@@ -71,14 +71,20 @@ print(object(s), sep=separator, end=end, file=file_obj)
 
 file_obj.close()
 `
+
 "r" 
+
 * Read from a file.
 * If the file doesn't exist, Python will generate an error.
+
 "w"
+
 * Write to a file.
 * If the file exists, its contents are overwritten/replaced.
 * If the file doesn't exist, it's created.
+
 "a"
+
 * Append a file.
 * If the file exists, new data is appended to it.
 * If the file doesn't exist, it's created.
