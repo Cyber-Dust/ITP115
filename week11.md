@@ -71,7 +71,7 @@ print(object(s), sep=separator, end=end, file=file_obj)
 
 file_obj.close()
 `
-
+#### FILE ACCESS MODES
 "r" 
 
 * Read from a file.
