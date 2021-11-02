@@ -49,5 +49,6 @@ A comprehensive and foundational beginning into worlds unexplored.
 * [Notes]()
 * [Lab]()
 * [Assignment]()
-#### XI. 
+#### XI. FILES
+[Notes](week11.md)
 [Assignment 8](a8_volk_dasean.py)
