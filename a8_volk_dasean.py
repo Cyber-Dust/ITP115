@@ -19,3 +19,9 @@ import TicTacToeHelper
 # 8 (inclusive).
 
 # def is_valid_move(boardList, spot):
+board = ["|__|__|__|",
+         "|__|__|__|",
+         "|__|__|__|"]
+# use a for loop to display a list vertically. A comma distinguishes the level.
+for i in board: 
+    print(i)
