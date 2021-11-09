@@ -54,6 +54,6 @@ A comprehensive and foundational beginning into worlds unexplored.
 * [Lab 9](lab9.py)
 * [Assignment 8](a8_volk_dasean.py)
 #### XII. Dictionaries
-* [Notes]()[ (Code)](lab10.py)
+* [Notes]()[ (Code)](week12.py)
 * [Lab 10]()
 * [Assignment 9](a9_volk_dasean.py)
