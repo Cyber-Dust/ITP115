@@ -14,8 +14,10 @@ def get_languages(file_name="languages.csv"):
     # open the file
     languages = open(file_name, "r")
     header = languages.readline()
+    header = header.strip()
+    header_lang = header.split(",")
     languages.close()
-    return header
+    return header_lang
 
 # Define the getTranslationLanguage(langList) function.
 # o Parameter: langList is a list of the languages
@@ -24,11 +26,13 @@ def get_languages(file_name="languages.csv"):
 def get_translation_language(lang_list):
     lang_list = ["Danish", "Dutch", "Finnish", "French", "German", "Indonesian", "Italian",
                 "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish"]
-    print("Translate English words to one of the following languages:\n", lang_list)
-    lang = input("Enter a language: ").lower()
-    if lang != lang_list:
-        print("This program does not support", lang)
-        lang = input("Enter a language: ").lower()
+    print("Translate English words to one of the following languages:\n",
+          "Danish", "Dutch", "Finnish", "French", "German", "Indonesian", "Italian\n",
+                "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish")
+    lang = input("Enter a language: ").capitalize()
+    while lang not in lang_list:
+        print("This program does not support", lang.capitalize())
+        lang = input("Enter a language: ").capitalize()
     return lang.capitalize()
 
 # Define the readFile(langList, langStr, fileName) function.
@@ -67,9 +71,8 @@ def read_file(lang_list, lang_str, file_name="languages.csv"):
 def create_results_file(language):
     name_file = language + ".txt"
     out_file = open(name_file, "w")
-    for translation in language:
-        print("Words translated from English to", language)
-        print(translation, file=out_file)
+    print("Words translated from English to", language, file=out_file)
+    # print(language, file=out_file)
     out_file.close()
 
 # Define the translateWords(englishList, translationList, language) function.
@@ -80,30 +83,49 @@ def create_results_file(language):
 # o Return value: none
 
 def translate_words(english_list, translation_list, language):
-    results = open(language)
-    enter = input("Enter a word to translate: ")
-    for i in english_list:
-        if
-# open the results file
-# ask user to enter an english word to translate
-# if the word is not in the english list, tell the user
+    # open the results file
+    name_file = language + ".txt"
+    out_file = open(name_file, "w")
+    continue_translator = "y"
+    # ask user to enter an english word to translate
+
+    while continue_translator.lower() == "y":
+        enter = input("\nEnter a word to translate: ").lower()
+        indexed = english_list.index(enter)
+        translation = translation_list[indexed]
+        if enter not in english_list:
+            print(enter, "is not in the English list")
+            continue_translator = input("Another word (y or n) ")
+            # put this before a valid translation, not "-"
+        elif enter in english_list and translation == "-": 
+            print(enter, "does not have a translation")
+            continue_translator = input("Another word (y or n) ")
+        elif enter in english_list:
+            print(enter, "is translated to", translation)
+            print(enter, "=", translation, file=out_file)
+            continue_translator = input("Another word (y or n) ")
+
+        # if the word is not in the english list, tell the user
+
+    print("\nTranslated words have been saved to", name_file)
+
 # translate the word. if there is a translation, show the user
 # if there is no translation, tell the user
 # then ask if they want to translate the word
 
 
+def main():
+    print("Language Translator")
+    display = get_languages("languages.csv")
+    translate = read_file(display, lang_str="English", file_name="languages.csv")
+    translated_lang = get_translation_language(display)
+    trans_lang_one = read_file(display, lang_str=translated_lang, file_name="languages.csv")
+    create_results_file(translated_lang)
+    translate_words(translate, trans_lang_one, translated_lang)
 
 
 
-
-
-# def main():
-#     print("Language Translator")
-
-
-
-
-
+main()
 
 
 
