@@ -39,15 +39,24 @@ def get_translation_language(lang_list):
 # and it has a default value of "languages.csv"
 # o Return value: a list of words in the language identified by the langStr parameter
 
+
 def read_file(lang_list, lang_str, file_name="languages.csv"):
-    lang_str = []
+    # Create an empty list.
+    list = []
+    # o Open the CSV file and read the header row to skip it.
     fin = open(file_name, "r")
     header_line = fin.readline()
+    # o Use the langList and langStr parameters to determine the index of the language.
+    language_index = lang_list.index(lang_str)
+    # o Loop through the rest of the file. Each line of data will have an extraneous new
+    # line at the end
     for line in fin:
-        line = line.strip()
-    data_list = line.split(",")
-    print(data_list)
+        line = line.strip() # remove
+        line = line.split(",") # break up the line into a list of strings
+        translation = line[language_index]
+        list.append(translation) # Get the correct word and append it to the list.
     fin.close()
+    return list
 
 # Define the createResultsFile(language) function.
 # o Parameter: language is a string containing the name of the language for
@@ -70,14 +79,28 @@ def create_results_file(language):
 # translationList
 # o Return value: none
 
-# def translate_words(english_list, translation_list, language):
-    
+def translate_words(english_list, translation_list, language):
+    results = open(language)
+    enter = input("Enter a word to translate: ")
+    for i in english_list:
+        if
+# open the results file
+# ask user to enter an english word to translate
+# if the word is not in the english list, tell the user
+# translate the word. if there is a translation, show the user
+# if there is no translation, tell the user
+# then ask if they want to translate the word
 
 
 
-# 
+
+
+
+
 # def main():
 #     print("Language Translator")
+
+
 
 
 
