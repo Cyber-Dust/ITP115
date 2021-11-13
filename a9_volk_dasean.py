@@ -4,6 +4,8 @@
 # Assignment 9
 # Description:
 
+# Name of new file is not showing up in new file.txt
+# the branching in the translate word function needs to address "-" properly
 
 # Define the getLanguages(fileName) function.
 # o Parameter: fileName is a string containing the name of a CSV file to read from
@@ -19,21 +21,23 @@ def get_languages(file_name="languages.csv"):
     languages.close()
     return header_lang
 
+
 # Define the getTranslationLanguage(langList) function.
 # o Parameter: langList is a list of the languages
 # o Return value: a string for the language to translate words into
 
 def get_translation_language(lang_list):
     lang_list = ["Danish", "Dutch", "Finnish", "French", "German", "Indonesian", "Italian",
-                "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish"]
+                 "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish"]
     print("Translate English words to one of the following languages:\n",
           "Danish", "Dutch", "Finnish", "French", "German", "Indonesian", "Italian\n",
-                "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish")
+          "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish")
     lang = input("Enter a language: ").capitalize()
     while lang not in lang_list:
         print("This program does not support", lang.capitalize())
         lang = input("Enter a language: ").capitalize()
     return lang.capitalize()
+
 
 # Define the readFile(langList, langStr, fileName) function.
 # o Parameter 1: langList is a list of the languages
@@ -46,7 +50,7 @@ def get_translation_language(lang_list):
 
 def read_file(lang_list, lang_str, file_name="languages.csv"):
     # Create an empty list.
-    list = []
+    list_of = []
     # o Open the CSV file and read the header row to skip it.
     fin = open(file_name, "r")
     header_line = fin.readline()
@@ -55,12 +59,13 @@ def read_file(lang_list, lang_str, file_name="languages.csv"):
     # o Loop through the rest of the file. Each line of data will have an extraneous new
     # line at the end
     for line in fin:
-        line = line.strip() # remove
-        line = line.split(",") # break up the line into a list of strings
+        line = line.strip()  # remove
+        line = line.split(",")  # break up the line into a list of strings
         translation = line[language_index]
-        list.append(translation) # Get the correct word and append it to the list.
+        list_of.append(translation)  # Get the correct word and append it to the list.
     fin.close()
-    return list
+    return list_of
+
 
 # Define the createResultsFile(language) function.
 # o Parameter: language is a string containing the name of the language for
@@ -74,6 +79,7 @@ def create_results_file(language):
     print("Words translated from English to", language, file=out_file)
     # print(language, file=out_file)
     out_file.close()
+
 
 # Define the translateWords(englishList, translationList, language) function.
 # o Parameter 1: englishList is a list of words in English
@@ -91,28 +97,31 @@ def translate_words(english_list, translation_list, language):
 
     while continue_translator.lower() == "y":
         enter = input("\nEnter a word to translate: ").lower()
-        indexed = english_list.index(enter)
-        translation = translation_list[indexed]
-        if enter not in english_list:
+
+        if enter in english_list:
+            indexed = english_list.index(enter)
+            translation = translation_list[indexed]
+            print(enter, "is translated to", translation)
+            print(enter, "=", translation, file=out_file)
+            continue_translator = input("Another word (y or n) ")
+        elif enter not in english_list:
             print(enter, "is not in the English list")
             continue_translator = input("Another word (y or n) ")
             # put this before a valid translation, not "-"
-        elif enter in english_list and translation == "-": 
+        elif enter in english_list and translation == "-":
             print(enter, "does not have a translation")
-            continue_translator = input("Another word (y or n) ")
-        elif enter in english_list:
-            print(enter, "is translated to", translation)
-            print(enter, "=", translation, file=out_file)
             continue_translator = input("Another word (y or n) ")
 
         # if the word is not in the english list, tell the user
 
     print("\nTranslated words have been saved to", name_file)
 
+
 # translate the word. if there is a translation, show the user
 # if there is no translation, tell the user
 # then ask if they want to translate the word
 
+# ------------------------------------------------CALLING FUNCTIONS--------------------------------------------------- #
 
 def main():
     print("Language Translator")
@@ -124,25 +133,7 @@ def main():
     translate_words(translate, trans_lang_one, translated_lang)
 
 
-
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # def get_languages():
 #     file_in = open("languages.csv", "r")
