@@ -97,10 +97,9 @@ def translate_words(english_list, translation_list, language):
 
     while continue_translator.lower() == "y":
         enter = input("\nEnter a word to translate: ").lower()
-
-        if enter in english_list:
-            indexed = english_list.index(enter)
-            translation = translation_list[indexed]
+        indexed = english_list.index(enter)
+        translation = translation_list[indexed]
+        if enter in english_list and translation != "-":
             print(enter, "is translated to", translation)
             print(enter, "=", translation, file=out_file)
             continue_translator = input("Another word (y or n) ")
@@ -134,42 +133,3 @@ def main():
 
 
 main()
-
-# def get_languages():
-#     file_in = open("languages.csv", "r")
-#     for line in file_in:
-#         word = line.strip()
-#     print(word)
-#     file_in.close()
-#
-# def get_translation_language(lang_list):
-#     lang_list = ["Danish", "Dutch", "Finnish", "French", "German", "Indonesian", "Italian",
-#           "Japanese", "Latin", "Norwegian", "Portuguese", "Spanish", "Swahili", "Swedish"]
-#     print("Translate English words to one of the following languages:\n"
-#           "Danish Dutch Finnish French German Indonesian Italian\n"
-#           "Japanese Latin Norwegian Portuguese Spanish Swahili Swedish")
-#     lang = input("Enter a language: ")
-#     if lang != lang_list:
-#         print("This program does not support", lang)
-#         lang = input("Enter a language: ")
-#
-# def read_file(lang_list, lang_str, file_name="languages.csv"):
-#     list = []
-#     fin = open(file_name, "r")
-#     header_line = fin.readline()
-#     for line in fin:
-#         line = line.strip()
-#     data_list = line.split(",")
-#     print(data_list)
-#     fin.close()
-#
-# def create_results(language):
-#     # create variable for results txt file
-#     language = ""
-#     name_file = language + ".txt"
-#     out_file = open(name_file, "w")
-#     for file in language:
-#         print("Words translated from English to", language)
-#
-# def translate_words(english_list, translation_list, language):
-#     english_list = ""
