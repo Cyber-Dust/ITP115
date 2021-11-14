@@ -100,19 +100,20 @@ def translate_words(english_list, translation_list, language):
         enter = input("\nEnter a word to translate: ")
         if enter in english_list:
             indexed = english_list.index(enter)
-            translation = translation_list[indexed]
+            translation = translation_list[indexed] # Create these variables before looping
 
             if enter in english_list and translation != "-":
                 print(enter, "is translated to", translation)
-                print(enter, "=", translation, file=out_file)
+                print(enter, "=", translation, file=out_file) # write to the file
                 continue_translator = input("Another word (y or n) ")
-            elif enter not in english_list:
-                print(enter, "is not in the English list")
-                continue_translator = input("Another word (y or n) ")
-                # put this before a valid translation, not "-"
+
             elif enter in english_list and translation == "-":
                 print(enter, "does not have a translation")
                 continue_translator = input("Another word (y or n) ")
+        elif enter not in english_list:
+            print(enter, "is not in the English list")
+            continue_translator = input("Another word (y or n) ")
+            # put this before a valid translation, not "-"
 
         # if the word is not in the english list, tell the user
 
@@ -123,6 +124,7 @@ def translate_words(english_list, translation_list, language):
 # then ask if they want to translate the word
 
 # ------------------------------------------------CALLING FUNCTIONS--------------------------------------------------- #
+
 
 def main():
     print("Language Translator")
