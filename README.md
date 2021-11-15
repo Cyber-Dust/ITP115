@@ -6,7 +6,7 @@ A comprehensive and foundational beginning into worlds unexplored.
     
  b) Date: Aug 2021
     
- c) dvolk@usc.edu
+ c) e
 
 
 
