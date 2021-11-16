@@ -40,6 +40,16 @@ class Mobile_Phone:
 * a method that is a constructor
 * double underscores = "dunder"
 
+### _str_() Method
+* no parameters
+* returns a string
+* used to print an object make from the class
+
+### Self
+* a way for the object to refer to itself
+* attributes are porceeded by self
+*
+
 CODE EXAMPLE
 
 `
@@ -54,3 +64,5 @@ def main():
 main()
 
 `
+
+
