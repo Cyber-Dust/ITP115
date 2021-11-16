@@ -47,8 +47,10 @@ class Mobile_Phone:
   def _init_(self, make, model):
     self.make = make
     self.model = model
+    
 def main():
   dasean = Mobile_Phone("Apple", "iPhone SE")
   
 main()
+
 `
