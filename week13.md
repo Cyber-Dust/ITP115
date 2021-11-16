@@ -10,7 +10,7 @@ Before building an object, Design it
 
 1. Create a *class*
 * define class once
-* create many objects form the same class
+* create many objects from the same class
 
 2. In the class, define attribute and methods
 * variables = attributes
@@ -21,6 +21,34 @@ Syntax
 class ClassName: 
   statements
 `
+
 Conventions:
 * use upper CamelCase
 * or upper Snake_Case
+
+ex.) A phone
+
+`
+class Mobile_Phone:
+  def _init_(self):
+    self.make = "Apple"
+    self.model = "iPhone5"
+  
+`
+
+### _init_() Method
+* a method that is a constructor
+* double underscores = "dunder"
+
+CODE EXAMPLE
+
+`
+class Mobile_Phone:
+  def _init_(self, make, model):
+    self.make = make
+    self.model = model
+def main():
+  dasean = Mobile_Phone("Apple", "iPhone SE")
+  
+main()
+`
