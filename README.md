@@ -57,3 +57,7 @@ A comprehensive and foundational beginning into worlds unexplored.
 * [Notes]()[ (Code)](week12.py)
 * [Lab 10](lab10.py)
 * [Assignment 9](a9_volk_dasean.py)
+#### XIII. Objects Part 1.
+* * [Notes]()[ (Code)]()
+* [Lab 10](lab11.py)
+* [Assignment 9](a10_volk_dasean.py)
