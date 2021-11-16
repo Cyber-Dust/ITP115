@@ -24,7 +24,7 @@ class Movie:
         info = self.title + " (" + str(self.year) + ")"
         if self.genre:
             info += "\n\tGenre: " + self.genre
-        if self.rating:
+        if self.rating != "NR":
             info += "\n\tRating: " + self.rating
             
         return info
