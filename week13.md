@@ -30,17 +30,17 @@ ex.) A phone
 
 `
 class Mobile_Phone:
-  def _init_(self):
+  def __init__(self):
     self.make = "Apple"
     self.model = "iPhone5"
   
 `
 
-### _init_() Method
+### __init__() Method
 * a method that is a constructor
 * double underscores = "dunder"
 
-### _str_() Method
+### __str__() Method
 * no parameters
 * returns a string
 * used to print an object make from the class
@@ -54,7 +54,7 @@ CODE EXAMPLE
 
 `
 class Mobile_Phone:
-  def _init_(self, make, model):
+  def __init__(self, make, model):
     self.make = make
     self.model = model
     
