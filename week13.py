@@ -22,6 +22,11 @@ class Movie:
     def __str__(self):
         # must return a string
         info = self.title + " (" + str(self.year) + ")"
+        if self.genre:
+            info += "\n\tGenre: " + self.genre
+        if self.rating:
+            info += "\n\tRating: " + self.rating
+            
         return info
       
 def main():
@@ -31,7 +36,7 @@ def main():
   print("Dasean's favorite movie")
   dasean = Movie("Drive", 2011)
   dasean.genre = "Crime Drama"
-  dasean.length = 140 + "min"
+  dasean.rating = "R"
   print(dasean)
   
 main()
