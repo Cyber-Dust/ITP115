@@ -50,10 +50,55 @@ def display_artists(dictionary="musicLibrary.dat"):
     for i in artists:
         print("  ", i)
 
+
+# Define the addAlbum(dictionary) function.
+# o Parameter: a dictionary representing the music library
+# o Return value: None
+# o Get input from the user for the name of the artist and the name of the album
+# that they want to add.
+def add_album(dictionary="musicLibrary.dat"):
+    artists = MusicLibraryHelper.loadLibrary(dictionary)
+    new_artist = input("Enter Artist: ").title()
+    new_album = input("Enter Album: ").title()
+    # if artists is in dictionary, add album to the existing list of albums
+    if new_artist in artists:
+        artists.append(new_album)
+    #     if new_album in artists:
+    # elif new_artist not in artists:
+    print(artists)
+    # if the album exists, then do not add it
+    # if artist is not in the dictionary. add a new key (artists), add new value(list containing the album)
+
+
+def generate_random_playlist(dictionary="musicLibrary.dat"):
+    library = MusicLibraryHelper.loadLibrary(dictionary)
+    print("Here is your random playlist: \n")
+    for key in library:
+        print(random.choice(library[key]), "by", key)
+
+
 def main():
-    display_menu()
-    input("Choice: ")
+    new_game = input("Choice: ")
+    while new_game != "g".lower():
+        display_menu()
+        if new_game == "a":
+            display_library()
+        elif new_game == "b":
+            display_artists()
+        # elif new_game == "c":
+        #     add_album()
+        # elif new_game == "d":
+        # elif new_game == "e":
+        elif new_game == "f":
+            generate_random_playlist()
+        # elif new_game == "g":
+    # new_library = input("Enter music library filename: ") 
+    # new_library = MusicLibraryHelper.saveLibrary(new_library) # how do you do this? 
+    # # the dictionary representing the music library
+    # print("Saved music library to ", new_library)
 
 
 display_library()
 display_artists()
+generate_random_playlist()
+add_album()
