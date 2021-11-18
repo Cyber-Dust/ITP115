@@ -30,10 +30,13 @@ def display_menu():
 # o Parameter: a dictionary representing the music library
 # o Return value: None
 def display_library(dictionary="musicLibrary.dat"):
-    display = MusicLibraryHelper.loadLibrary(dictionary)
+    library = MusicLibraryHelper.loadLibrary(dictionary)
     # ctrl + alt + l to auto indent
-    for key in display:
-        print("Artist:", key, "\n   Albums: \n", display[key])
+    for key in library:
+        print("Artist:", key, "\n   Albums:  ")
+        value = library[key]
+        for keys in value:
+            print("    ", keys)
         # need to get the [] removed from the values and display them horizontally?
 
 
@@ -42,10 +45,15 @@ def display_library(dictionary="musicLibrary.dat"):
 # o Return value: None
 # o Print out the artists in the music library
 def display_artists(dictionary="musicLibrary.dat"):
-    displayer = MusicLibraryHelper.loadLibrary(dictionary)
+    artists = MusicLibraryHelper.loadLibrary(dictionary)
     print("Artists: ")
-    for i in displayer:
+    for i in artists:
         print("  ", i)
 
-display_artists()
+def main():
+    display_menu()
+    input("Choice: ")
 
+
+display_library()
+display_artists()
