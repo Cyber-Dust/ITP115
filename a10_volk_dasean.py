@@ -127,8 +127,16 @@ def main():
         add_album()
     elif new_game == "d":
         delete_album()
+        if True:
+            print("Delete album success")
+        elif False:
+            print("Delete album failed")
     elif new_game == "e":
         delete_artist()
+        if True:
+            print("Delete artist success")
+        elif False:
+            print("Delete artist failed")
     elif new_game == "f":
         generate_random_playlist()
         # elif new_game == "g":
@@ -140,6 +148,7 @@ def main():
         print("Invalid entry")
     print()
     display_menu()
+    
 
 
 
@@ -148,5 +157,6 @@ def main():
 # generate_random_playlist()
 # add_album()
 main()
+
 
 
