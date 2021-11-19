@@ -19,13 +19,13 @@ import random
 # o Print out the menu options to the user:
 def display_menu():
     print("Manage Your Music Library"
-          "\na) Display library"
-          "\nb) Display artists"
-          "\nc) Add an artist/album"
-          "\nd) Delete an album"
-          "\ne) Delete an artist"
-          "\nf) Generate a random playlist"
-          "\ng) Exit")
+          "\n   a) Display library"
+          "\n   b) Display artists"
+          "\n   c) Add an artist/album"
+          "\n   d) Delete an album"
+          "\n   e) Delete an artist"
+          "\n   f) Generate a random playlist"
+          "\n   g) Exit")
 
 
 # Define the displayLibrary(dictionary) function.
@@ -81,12 +81,15 @@ def add_album(dictionary="musicLibrary.dat"):
 # False if the album was not successfully deleted
 
 
-def delete_album(dictionary):
-    dictionary = "musicLibrary.dat"
+def delete_album(dictionary="musicLibrary.dat"):
+    music_library = MusicLibraryHelper.loadLibrary(dictionary)
     artist = input("Enter artist: ").title()
     album = input("Enter album: ").title()
-    # if artist in dictionary and album in dictionary:
-       # delete the corresponding inputs from dictionary
+    if artist in music_library and album in music_library:
+        del music_library[album]
+        return True
+    elif artist not in music_library and album not in music_library:
+        return False
     # return true or false
 
 # Define the deleteArtist(dictionary) function.
@@ -95,40 +98,55 @@ def delete_album(dictionary):
 # if the artist was not successfully deleted
 
 
-def delete_artist(dictionary):
+def delete_artist(dictionary="musicLibrary.dat"):
+    music_library = MusicLibraryHelper.loadLibrary(dictionary)
     artist = input("Enter artist to delete: ").title()
-
+    if artist in music_library:
+        del music_library[artist]
+        return True
+    elif artist not in music_library:
+        return False
 
 def generate_random_playlist(dictionary="musicLibrary.dat"):
     library = MusicLibraryHelper.loadLibrary(dictionary)
     print("Here is your random playlist:")
     for key in library:
-        print(random.choice(library[key]), "by", key)
+        # add "   " for space accuracy (tab)
+        print("   " + random.choice(library[key]), "by", key)
 
 
 def main():
+    display_menu()
     new_game = input("Choice: ")
-    while new_game != "g".lower():
-        display_menu()
-        if new_game == "a":
-            display_library()
-        elif new_game == "b":
-            display_artists()
-        # elif new_game == "c":
-        #     add_album()
-        # elif new_game == "d":
-        # elif new_game == "e":
-        elif new_game == "f":
-            generate_random_playlist()
+    # while new_game != "g".lower():
+    if new_game == "a":
+        display_library()
+    elif new_game == "b":
+        display_artists()
+    elif new_game == "c":
+        add_album()
+    elif new_game == "d":
+        delete_album()
+    elif new_game == "e":
+        delete_artist()
+    elif new_game == "f":
+        generate_random_playlist()
         # elif new_game == "g":
     # new_library = input("Enter music library filename: ")
-    # MusicLibraryHelper.saveLibrary(new_library, musicLibDct) # how do you do this?
+    # MusicLibraryHelper.saveLibrary(new_library, ) # how do you do this?
     # # the dictionary representing the music library
     # print("Saved music library to ", new_library)
+    else:
+        print("Invalid entry")
+    print()
+    display_menu()
 
 
-display_library()
-display_artists()
-generate_random_playlist()
-add_album()
+
+# display_library()
+# display_artists()
+# generate_random_playlist()
+# add_album()
+main()
+
 
