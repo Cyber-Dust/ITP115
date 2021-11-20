@@ -6,6 +6,12 @@
 
 # ------------------------------------WELCOME TO THE MUSIC LIBRARY GENERATOR----------------------------------------- #
 
+# The program uses a .dat file with a list of albums by Adele, the Beatles, and The Who. First, a display menu appears
+# which allows you to choose to display the library or the artists, add an album/artist to the library, delete an
+# album or delete an artist. Lastly, the program allows you to generate a random playlist. Once g is chosen for
+# exit, the program saves your altered library to a new file (make sure to put .dat at the end of your new file name).
+# Boom: You have curated, mangled and generated a file of musicians and their albums, all using python dictionaries.
+
 # import music library helper file
 import MusicLibraryHelper
 
@@ -17,6 +23,8 @@ import random
 # o Parameter: None
 # o Return value: None
 # o Print out the menu options to the user:
+
+
 def display_menu():
     print("Manage Your Music Library"
           "\n   a) Display library"
@@ -31,12 +39,11 @@ def display_menu():
 # Define the displayLibrary(dictionary) function.
 # o Parameter: a dictionary representing the music library
 # o Return value: None
-def display_library(dictionary="musicLibrary.dat"):
-    library = MusicLibraryHelper.loadLibrary(dictionary)
+def display_library(dictionary):
     # ctrl + alt + l to auto indent
-    for key in library:
+    for key in dictionary:
         print("Artist:", key, "\n   Albums:  ")
-        value = library[key]
+        value = dictionary[key]
         for keys in value:
             print("    ", keys)
         # need to get the [] removed from the values and display them horizontally?
@@ -46,10 +53,9 @@ def display_library(dictionary="musicLibrary.dat"):
 # o Parameter: a dictionary representing the music library
 # o Return value: None
 # o Print out the artists in the music library
-def display_artists(dictionary="musicLibrary.dat"):
-    artists = MusicLibraryHelper.loadLibrary(dictionary)
+def display_artists(dictionary):
     print("Artists: ")
-    for i in artists:
+    for i in dictionary:
         print("  ", i)
 
 
@@ -58,22 +64,23 @@ def display_artists(dictionary="musicLibrary.dat"):
 # o Return value: None
 # o Get input from the user for the name of the artist and the name of the album
 # that they want to add.
-def add_album(dictionary="musicLibrary.dat"):
-    artists = MusicLibraryHelper.loadLibrary(dictionary)
+def add_album(dictionary):
     new_artist = input("Enter Artist: ").title()
     new_album = input("Enter Album: ").title()
     # if artists is in dictionary, add album to the existing list of albums
-    if new_artist in artists:
-        artists[new_artist].append(new_album)
+    if new_artist in dictionary:
+        if new_album not in dictionary:
+            dictionary[new_artist].append(new_album)
     #     if new_album in artists:
     #     if new_album in artists: # how do I NOT add something?
     # elif new_artist not in artists:
-    elif new_artist not in artists:
-        artists[new_artist] = [new_artist].append(new_album)
+    elif new_artist not in dictionary:
+        dictionary[new_artist] = [new_album]
         # along with the new value
-    print(artists)
+    # print(dictionary)
     # if the album exists, then do not add it
     # if artist is not in the dictionary. add a new key (artists), add new value(list containing the album)
+
 
 # Define the deleteAlbum(dictionary) function.
 # o Parameter: a dictionary representing the music library
@@ -81,16 +88,18 @@ def add_album(dictionary="musicLibrary.dat"):
 # False if the album was not successfully deleted
 
 
-def delete_album(dictionary="musicLibrary.dat"):
-    music_library = MusicLibraryHelper.loadLibrary(dictionary)
+def delete_album(dictionary):
     artist = input("Enter artist: ").title()
     album = input("Enter album: ").title()
-    if artist in music_library and album in music_library:
-        del music_library[album]
-        return True
-    elif artist not in music_library and album not in music_library:
+    if artist in dictionary:
+        for key in dictionary:
+            value = dictionary[key]
+            if album in value:
+                dictionary[artist].remove(album)
+                return True
+    elif artist not in dictionary or album not in dictionary:
         return False
-    # return true or false
+
 
 # Define the deleteArtist(dictionary) function.
 # o Parameter: a dictionary representing the music library
@@ -98,65 +107,66 @@ def delete_album(dictionary="musicLibrary.dat"):
 # if the artist was not successfully deleted
 
 
-def delete_artist(dictionary="musicLibrary.dat"):
-    music_library = MusicLibraryHelper.loadLibrary(dictionary)
+def delete_artist(dictionary):
     artist = input("Enter artist to delete: ").title()
-    if artist in music_library:
-        del music_library[artist]
+    if artist in dictionary:
+        del dictionary[artist]
         return True
-    elif artist not in music_library:
+    elif artist not in dictionary:
         return False
 
-def generate_random_playlist(dictionary="musicLibrary.dat"):
-    library = MusicLibraryHelper.loadLibrary(dictionary)
+
+def generate_random_playlist(dictionary):
     print("Here is your random playlist:")
-    for key in library:
+    for key in dictionary:
         # add "   " for space accuracy (tab)
-        print("   " + random.choice(library[key]), "by", key)
+        print("   " + random.choice(dictionary[key]), "by", key)
 
 
 def main():
-    display_menu()
-    new_game = input("Choice: ")
-    # while new_game != "g".lower():
-    if new_game == "a":
-        display_library()
-    elif new_game == "b":
-        display_artists()
-    elif new_game == "c":
-        add_album()
-    elif new_game == "d":
-        delete_album()
-        if True:
-            print("Delete album success")
-        elif False:
-            print("Delete album failed")
-    elif new_game == "e":
-        delete_artist()
-        if True:
-            print("Delete artist success")
-        elif False:
-            print("Delete artist failed")
-    elif new_game == "f":
-        generate_random_playlist()
-        # elif new_game == "g":
-    # new_library = input("Enter music library filename: ")
-    # MusicLibraryHelper.saveLibrary(new_library, ) # how do you do this?
-    # # the dictionary representing the music library
-    # print("Saved music library to ", new_library)
-    else:
-        print("Invalid entry")
-    print()
-    display_menu()
-    
+    library = "musicLibrary.dat"
+    music_library = MusicLibraryHelper.loadLibrary(library)
+    # do while loop to display menu until you exit
+    music_generator = True
+    while music_generator:
+        print()
+        display_menu()
+        new_game = input("Choice: ").lower()
+        if new_game == "a":
+            display_library(music_library)
+
+        elif new_game == "b":
+            display_artists(music_library)
+
+        elif new_game == "c":
+            add_album(music_library)
+
+        elif new_game == "d":
+            delete_one = delete_album(music_library)
+            if delete_one:
+                print("Delete album success")
+            else:
+                print("Delete album failed")
+
+        elif new_game == "e":
+            delete = delete_artist(music_library)
+            if delete:
+                print("Delete artist success")
+            else:
+                print("Delete artist failed")
+
+        elif new_game == "f":
+            generate_random_playlist(music_library)
+        elif new_game == "g":
+            music_generator = False
+            new_library = input("Enter music library filename: ")
+            MusicLibraryHelper.saveLibrary(new_library, music_library)
+            print("Saved music library to", new_library)
+            # UNCOMMENT below to view your new library since you are not allowed to see it in the .dat file:
+            # new = MusicLibraryHelper.loadLibrary(new_library)
+            # print(new)
+        else:
+            print("Invalid entry")
 
 
-
-# display_library()
-# display_artists()
-# generate_random_playlist()
-# add_album()
 main()
-
-
-
