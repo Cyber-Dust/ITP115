@@ -39,6 +39,8 @@ def display_menu():
 # Define the displayLibrary(dictionary) function.
 # o Parameter: a dictionary representing the music library
 # o Return value: None
+
+
 def display_library(dictionary):
     # ctrl + alt + l to auto indent
     for key in dictionary:
@@ -53,17 +55,21 @@ def display_library(dictionary):
 # o Parameter: a dictionary representing the music library
 # o Return value: None
 # o Print out the artists in the music library
+
+
 def display_artists(dictionary):
     print("Artists: ")
     for i in dictionary:
         print("  ", i)
-
-
+        
+        
 # Define the addAlbum(dictionary) function.
 # o Parameter: a dictionary representing the music library
 # o Return value: None
 # o Get input from the user for the name of the artist and the name of the album
 # that they want to add.
+
+
 def add_album(dictionary):
     new_artist = input("Enter Artist: ").title()
     new_album = input("Enter Album: ").title()
@@ -134,27 +140,22 @@ def main():
         new_game = input("Choice: ").lower()
         if new_game == "a":
             display_library(music_library)
-
         elif new_game == "b":
             display_artists(music_library)
-
         elif new_game == "c":
             add_album(music_library)
-
         elif new_game == "d":
             delete_one = delete_album(music_library)
             if delete_one:
                 print("Delete album success")
             else:
                 print("Delete album failed")
-
         elif new_game == "e":
             delete = delete_artist(music_library)
             if delete:
                 print("Delete artist success")
             else:
                 print("Delete artist failed")
-
         elif new_game == "f":
             generate_random_playlist(music_library)
         elif new_game == "g":
