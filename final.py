@@ -7,3 +7,7 @@
 
 # use the "nationalparks.csv"
 # .csv files = comma serperated values
+
+
+def create_list_of_parks():
+  
