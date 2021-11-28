@@ -8,6 +8,8 @@
 # use the "nationalparks.csv"
 # .csv files = comma serperated values
 
+# finish this by december 10
+
 
 def create_list_of_parks():
   
