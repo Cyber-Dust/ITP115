@@ -2,7 +2,7 @@
 # ITP 115, Fall 2021
 # Section: Boba
 # Assignment 6
-# Description:
+# Description: xx
 #-----------------------------------------WELCOME TO THE JUMBLED WORD GUESSING GAME------------------------------------#
 # This program asks the user to interpret a jumbled word from a list of strings. If the user cannot faithfully guess,
 # the program will ask the user for a corresponding hint. Once the user guesses the correct word, the program will
