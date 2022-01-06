@@ -5,7 +5,8 @@
 # tasks.py
 # Description:
 
-# mini hiatus + the return
+# interface, tasks and main module will be uploaded on:
+# January 6, 2022
 
 # import interface
 import interface
