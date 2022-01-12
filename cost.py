@@ -1,5 +1,7 @@
 # THIS IS A COST BUDGETER
 
+import random
+
 cost = 455
 budget = 1356
 
