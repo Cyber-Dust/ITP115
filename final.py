@@ -41,6 +41,7 @@ def main():
     parks = "national_parks.csv"
     display_menu(menu_dict=interface)
     create_list_of_parks(parks)
+    print("Thank you for using this software")
 
 main()
 
@@ -48,3 +49,4 @@ main()
 
 
 # def get_date(data_str, ):
+
