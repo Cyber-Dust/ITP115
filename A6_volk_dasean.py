@@ -8,6 +8,7 @@
 # the program will ask the user for a corresponding hint. Once the user guesses the correct word, the program will
 # congratulate the user and display how many times it took them to guess the word.
 #444
+#begin python advanced starting monday
 # import the random module
 import random
 
