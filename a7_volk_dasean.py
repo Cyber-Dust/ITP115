@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# ITP 115, Fall 2021
-# Section: Boba
 # Assignment 7
 # Description: User vs. computer game of rock, paper, and scissors utilizing functions.
 # cmd + shift + r (mac) = replace all instances
