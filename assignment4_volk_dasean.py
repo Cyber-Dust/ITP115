@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# ITP 115, Fall 2021
-# # Section: Boba
 # Assignment 4
 # Description: a program that allows the user to enter an unknown amount of numbers. The
 # user will signal that they are done entering numbers by entering -1. The program will
