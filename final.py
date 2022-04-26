@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# ITP 115, Fall 2021
-# Section: Boba
 # Final Project
 # tasks.py
 # Description:
