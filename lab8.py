@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# Fall 2021, ITP115
-# Section: Boba
 # Lab 8
 
 #---------------------------------------COIN FLIPPING----------------------------------------#
