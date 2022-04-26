@@ -1,7 +1,5 @@
 Dasean Volk, dvolk@usc.edu
 
-ITP 115, Fall 2021
-
 Week 7 Notes
 
 
