@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# ITP 115, Fall 2021
-# Section: Boba
 # Assignment 6
 # Description: xx
 #-----------------------------------------WELCOME TO THE JUMBLED WORD GUESSING GAME------------------------------------#
