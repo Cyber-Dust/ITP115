@@ -4,7 +4,6 @@
 # user will signal that they are done entering numbers by entering -1. The program will
 # determine the smallest number entered and largest number entered by using variables
 # and branching.
-
 # variables that will hold the smallest number, largest number, count,
 # sum, and the number the user will enter
 user = " "
