@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# FALL 2021, ITP115
-# Section: Boba
 # Week X Notes
 
 #-------------------------------------------FUNCTIONS PT2-------------------------------------------------#
