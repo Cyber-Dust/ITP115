@@ -1,6 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# Week 11
-# Section: Boba
 # Files
 
 # Read a text file
