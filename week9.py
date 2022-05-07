@@ -1,5 +1,4 @@
 # Dasean Volk, dvolk@usc.edu
-# Section: Boba
 # Week 9 Notes
 
 # import modules needed
